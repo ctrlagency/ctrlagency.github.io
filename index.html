@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CTRL Agency | Shopify Stores, Social Media &amp; AI Content in Egypt</title>
+  <meta name="description" content="CTRL Agency builds Shopify stores, social media and AI video for home, lifestyle, fashion and luxury brands in Egypt. No need to shift business, we control it.">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="robots" content="noindex"><!-- TODO(launch): preview only; remove when the site is final -->
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CTRL Agency">
+  <meta property="og:title" content="CTRL Agency | Take CTRL of your brand.">
+  <meta property="og:description" content="Shopify stores, social media and AI content for home, lifestyle, fashion and luxury brands in Egypt.">
+  <meta property="og:image" content="og-image.png"><!-- [REPLACE] 1200×630 share image; use the full live URL once hosted -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="ar_EG">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Fonts: Archivo (headlines), VT323 (key-cap / terminal labels, like the logo), Inter (body), IBM Plex Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&family=Inter:wght@400;500;600&family=VT323&display=swap">
+
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <!-- CTRL logo: white key-cap frame with two cut corners, "Ctrl" in a terminal font -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="logo-key" viewBox="0 0 100 100">
+      <rect width="100" height="100" rx="5" fill="currentColor"/>
+      <rect x="13" y="10" width="74" height="77" rx="3" fill="#000"/>
+      <path d="M84 13 L97 -3 L104 4 L90 17 Z M16 84 L3 103 L-4 96 L10 83 Z" fill="#000"/>
+      <text x="50" y="58" text-anchor="middle" font-family="VT323, ui-monospace, monospace" font-size="30" fill="currentColor" letter-spacing="1">Ctrl</text>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <!-- ============ 1. NAVBAR ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner wrap">
+      <a class="brand" href="#top" aria-label="CTRL Agency, home">
+        <svg class="brand__logo" aria-hidden="true"><use href="#logo-key"/></svg>
+        <span class="brand__name">CTRL</span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Main">
+        <a href="#work" data-i18n="nav.work">Work</a>
+        <a href="#branding" data-i18n="nav.branding">Branding</a>
+        <a href="#clips" data-i18n="nav.reels">Reels</a>
+        <a href="#social" data-i18n="nav.social">Social</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#process" data-i18n="nav.process">Process</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="key key--yellow nav__cta-mobile" href="#contact" data-i18n="nav.talk">Let's Talk</a>
+      </nav>
+
+      <div class="nav__actions">
+        <button class="key key--sm lang-toggle" type="button" id="lang-toggle" aria-label="Switch to Arabic">
+          <span data-lang-label>AR</span>
+        </button>
+        <a class="key key--sm nav__cta" href="#contact" data-i18n="nav.talk">Let's Talk</a>
+        <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============ 2. HERO (yellow + animated halftone, like the Butter reference) ============ -->
+    <section class="hero" id="top">
+      <canvas class="hero__dots" id="hero-dots" aria-hidden="true"></canvas>
+      <div class="wrap hero__inner">
+        <div class="hero__top">
+          <p class="mono" data-i18n="hero.eyebrow">Brand marketing agency · Cairo, Egypt</p>
+          <p class="mono hero__tagline" dir="ltr">NO NEED TO SHIFT BUSINESS<br><mark>WE CONTROL IT..</mark></p>
+        </div>
+        <h1 class="hero__title" id="hero-title" aria-label="Take CTRL of your brand.">
+          <span class="hero__typed" id="hero-typed" aria-hidden="true"></span><span class="cursor" aria-hidden="true"></span>
+        </h1>
+        <div class="hero__bottom">
+          <p class="hero__sub" data-i18n="hero.sub">We build Shopify stores and social media presence for home, lifestyle and fashion brands.</p>
+          <div class="hero__ctas">
+            <a class="key key--lg" href="#work" data-i18n="hero.cta1">See Our Work</a>
+            <a class="key key--lg key--light" href="#contact" data-i18n="hero.cta2">Start a Project</a>
+          </div>
+        </div>
+        <ul class="shortcuts" aria-hidden="true">
+          <li><kbd>CTRL</kbd><i>+</i><kbd>BRAND</kbd></li>
+          <li><kbd>CTRL</kbd><i>+</i><kbd>GROW</kbd></li>
+          <li><kbd>CTRL</kbd><i>+</i><kbd>SELL</kbd></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 3. CLIENT MARQUEE (names come from PORTFOLIO in script.js) ============ -->
+    <section class="marquee" aria-label="Clients">
+      <div class="marquee__track" id="marquee"></div>
+    </section>
+
+    <!-- ============ 4. WEBSITE PORTFOLIO: scroll-driven capsule carousel (reference 2) ============ -->
+    <section class="work" id="work" aria-label="Websites by CTRL">
+      <div class="work__pin">
+        <div class="wrap work__head">
+          <div>
+            <p class="kicker"><kbd>CTRL</kbd><i>+</i><span data-i18n="work.kicker">BUILD</span></p>
+            <h2 class="h2" data-i18n="work.title">Websites by CTRL</h2>
+          </div>
+          <p class="lead" data-i18n="work.lead">Shopify stores built to sell, for home, lifestyle &amp; fashion brands.</p>
+        </div>
+
+        <div class="carousel" id="carousel" tabindex="0" aria-roledescription="carousel" aria-label="Websites by CTRL">
+          <div class="carousel__track" id="carousel-track"><!-- rendered from PORTFOLIO --></div>
+        </div>
+
+        <div class="wrap">
+          <div class="project" id="project-info" aria-live="polite"><!-- details of the website in the centre --></div>
+          <div class="work__meter" aria-hidden="true">
+            <span class="mono" id="car-count">01 / 05</span>
+            <span class="work__track"><span class="work__bar" id="work-bar"></span></span>
+            <span class="mono work__hint" data-i18n="work.hint">Scroll</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4b. BRANDING: brand books CTRL designed ============ -->
+    <section class="section section--paper brands" id="branding">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="kicker"><kbd>CTRL</kbd><i>+</i><span data-i18n="brands.kicker">IDENTITY</span></p>
+          <h2 class="h2" data-i18n="brands.title">Branding by CTRL</h2>
+          <p class="lead" data-i18n="brands.lead">Logo, colour, type and packaging. Brand books we designed from the first sketch.</p>
+        </header>
+        <ol class="brands__list" id="brands-list"><!-- rendered from BRANDS --></ol>
+      </div>
+      <div class="brands__float" id="brands-float" aria-hidden="true"></div>
+    </section>
+
+    <!-- ============ 4c. REELS: a draggable strip, the centre reel plays ============ -->
+    <section class="section section--dark reels-work" id="clips">
+      <div class="wrap">
+        <header class="section__head reels-work__head reveal">
+          <div>
+            <p class="kicker"><kbd>CTRL</kbd><i>+</i><span data-i18n="clips.kicker">REEL</span></p>
+            <h2 class="h2" data-i18n="clips.title">Reels by CTRL</h2>
+          </div>
+          <p class="lead" data-i18n="clips.lead">Shot, edited and posted for our clients. Drag through them, tap one to watch with sound.</p>
+        </header>
+      </div>
+      <div class="strip" id="strip" tabindex="0" aria-label="Reels by CTRL"><!-- rendered from CLIPS --></div>
+      <div class="wrap">
+        <p class="strip__caption" id="strip-caption" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ============ 5. AI VIDEO: glow + word wheel (reference 3) ============ -->
+    <section class="section section--glow ai" id="ai">
+      <div class="wrap ai__inner">
+        <header class="section__head reveal">
+          <p class="kicker"><kbd>CTRL</kbd><i>+</i><span>AI</span></p>
+          <h2 class="h2 h2--thin"><span data-i18n="ai.title">Made with</span> <span class="ai__mark">AI.</span></h2>
+          <p class="lead" data-i18n="ai.lead">Campaign-grade reels made with AI: no studio, no shoot days, all on brand.</p>
+        </header>
+        <div class="reels" id="reels"><!-- rendered from REELS --></div>
+      </div>
+    </section>
+
+    <!-- ============ 6. SOCIAL PORTFOLIO ============ -->
+    <section class="section section--yellow" id="social">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="kicker"><kbd>CTRL</kbd><i>+</i><span data-i18n="social.kicker">POST</span></p>
+          <h2 class="h2" data-i18n="social.title">Feeds by CTRL</h2>
+          <p class="lead" data-i18n="social.lead">Instagram accounts we plan, design and grow every month.</p>
+        </header>
+
+        <h3 class="group-title reveal"><span class="mono">01</span> <span data-i18n="social.g1">Built from scratch</span></h3>
+        <p class="group-sub reveal" data-i18n="social.g1d">Brand, Shopify store, content and feed: we built the whole thing.</p>
+        <div class="feeds feeds--2" id="feeds-scratch"></div>
+
+        <h3 class="group-title reveal"><span class="mono">02</span> <span data-i18n="social.g2">Content partners</span></h3>
+        <p class="group-sub reveal" data-i18n="social.g2d">Brands we create content for right now.</p>
+        <div class="feeds" id="feeds-content"></div>
+      </div>
+    </section>
+
+    <!-- ============ 7. SERVICES: expanding panels (reference 4) ============ -->
+    <section class="section section--paper" id="services">
+      <div class="wrap">
+        <header class="section__head reveal">
+          <p class="kicker"><kbd>CTRL</kbd><i>+</i><span data-i18n="services.kicker">SERVICES</span></p>
+          <h2 class="h2" data-i18n="services.title">What we take CTRL of</h2>
+        </header>
+        <div class="panels reveal" id="panels">
+          <article class="panel is-open">
+            <button class="panel__head" type="button" aria-expanded="true">
+              <span class="panel__num">00-1</span>
+              <span class="panel__short" data-i18n="svc1.s">Shopify</span>
+            </button>
+            <div class="panel__body">
+              <span class="panel__num panel__num--big">00-1</span>
+              <h3 data-i18n="svc1.t">Shopify Store Design &amp; Development</h3>
+              <p data-i18n="svc1.d">Custom Shopify stores, from theme design to checkout, built to look premium and sell.</p>
+              <p class="panel__word" aria-hidden="true" data-i18n="svc1.w">STORES</p>
+            </div>
+          </article>
+          <article class="panel">
+            <button class="panel__head" type="button" aria-expanded="false">
+              <span class="panel__num">00-2</span>
+              <span class="panel__short" data-i18n="svc2.s">Social</span>
+            </button>
+            <div class="panel__body">
+              <span class="panel__num panel__num--big">00-2</span>
+              <h3 data-i18n="svc2.t">Social Media Management &amp; Feed Design</h3>
+              <p data-i18n="svc2.d">Monthly content plans, feed design, captions and community management.</p>
+              <p class="panel__word" aria-hidden="true" data-i18n="svc2.w">FEEDS</p>
+            </div>
+          </article>
+          <article class="panel">
+            <button class="panel__head" type="button" aria-expanded="false">
+              <span class="panel__num">00-3</span>
+              <span class="panel__short" data-i18n="svc3.s">Content &amp; AI</span>
+            </button>
+            <div class="panel__body">
+              <span class="panel__num panel__num--big">00-3</span>
+              <h3 data-i18n="svc3.t">Content Creation &amp; AI Video</h3>
+              <p data-i18n="svc3.d">Product shoots, reels and AI-generated video that stops the scroll.</p>
+              <p class="panel__word" aria-hidden="true" data-i18n="svc3.w">REELS</p>
+            </div>
+          </article>
+          <article class="panel">
+            <button class="panel__head" type="button" aria-expanded="false">
+              <span class="panel__num">00-4</span>
+              <span class="panel__short" data-i18n="svc4.s">Brand</span>
+            </button>
+            <div class="panel__body">
+              <span class="panel__num panel__num--big">00-4</span>
+              <h3 data-i18n="svc4.t">Brand Strategy &amp; Identity</h3>
+              <p data-i18n="svc4.d">Positioning, voice and visual identity that make your brand unmistakable.</p>
+              <p class="panel__word" aria-hidden="true" data-i18n="svc4.w">BRAND</p>
+            </div>
+          </article>
+          <article class="panel">
+            <button class="panel__head" type="button" aria-expanded="false">
+              <span class="panel__num">00-5</span>
+              <span class="panel__short" data-i18n="svc5.s">Ads</span>
+            </button>
+            <div class="panel__body">
+              <span class="panel__num panel__num--big">00-5</span>
+              <h3 data-i18n="svc5.t">Paid Ads (Meta / TikTok / Google)</h3>
+              <p data-i18n="svc5.d">Campaigns planned, launched and optimised for sales, not just likes.</p>
+              <p class="panel__word" aria-hidden="true" data-i18n="svc5.w">ADS</p>
+            </div>
+          </article>
+          <article class="panel">
+            <button class="panel__head" type="button" aria-expanded="false">
+              <span class="panel__num">00-6</span>
+              <span class="panel__short" data-i18n="svc6.s">SEO</span>
+            </button>
+            <div class="panel__body">
+              <span class="panel__num panel__num--big">00-6</span>
+              <h3 data-i18n="svc6.t">SEO &amp; Store Optimization</h3>
+              <p data-i18n="svc6.d">Speed, search and conversion fixes so more visitors become customers.</p>
+              <p class="panel__word" aria-hidden="true" data-i18n="svc6.w">SEO</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. PROCESS: scroll word wheel (reference 3) ============ -->
+    <section class="process" id="process">
+      <div class="process__sticky">
+        <div class="wrap process__inner">
+          <p class="kicker"><kbd>CTRL</kbd><i>+</i><span data-i18n="process.kicker">PROCESS</span></p>
+          <h2 class="visually-hidden" data-i18n="process.title">How we work</h2>
+          <ol class="process__words" id="process-words">
+            <li class="is-active"><span class="mono">01</span><span data-i18n="p1.k">DISCOVER</span></li>
+            <li><span class="mono">02</span><span data-i18n="p2.k">PLAN</span></li>
+            <li><span class="mono">03</span><span data-i18n="p3.k">CREATE</span></li>
+            <li><span class="mono">04</span><span data-i18n="p4.k">GROW</span></li>
+          </ol>
+          <div class="process__desc" aria-live="polite">
+            <p class="is-active" data-i18n="p1.d">We learn your brand, audience, competitors and goals.</p>
+            <p data-i18n="p2.d">A clear roadmap: site structure, content calendar, campaigns.</p>
+            <p data-i18n="p3.d">We design, build, shoot and write, and keep everything on brand.</p>
+            <p data-i18n="p4.d">Launch, measure, optimise. Then we push for more.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9. STATS ============ -->
+    <!-- Counted from the portfolio: 5 stores, 7 managed accounts, 9 industries, 3 bilingual builds.
+         To flag a number as unconfirmed, add data-placeholder to its .stat (shows a [REPLACE] tag). -->
+    <section class="stats" aria-label="Results">
+      <div class="wrap stats__grid">
+        <div class="stat reveal">
+          <p class="stat__num"><span data-count="5">0</span>+</p>
+          <p class="stat__label" data-i18n="stats.s1">Shopify stores launched</p>
+        </div>
+        <div class="stat reveal">
+          <p class="stat__num"><span data-count="7">0</span>+</p>
+          <p class="stat__label" data-i18n="stats.s2">Social accounts managed</p>
+        </div>
+        <div class="stat reveal">
+          <p class="stat__num"><span data-count="9">0</span></p>
+          <p class="stat__label" data-i18n="stats.s3">Industries served</p>
+        </div>
+        <div class="stat reveal">
+          <p class="stat__num"><span data-count="3">0</span></p>
+          <p class="stat__label" data-i18n="stats.s4">Bilingual EN/AR builds</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 10. CTA + CONTACT ("Reach out" ending of the Butter reference) ============ -->
+    <section class="section section--dark contact-wrap" id="contact">
+      <div class="wrap">
+        <div class="cta reveal">
+          <h2 class="cta__title"><span data-i18n="cta.title">Ready to take CTRL?</span></h2>
+          <p class="cta__sub" data-i18n="cta.sub">Tell us about your brand. We reply within 24 hours.</p>
+          <a class="key key--yellow key--lg" href="#contact-form" data-i18n="cta.btn">Start a Project</a>
+        </div>
+
+        <div class="contact">
+          <div class="contact__intro reveal">
+            <p class="kicker"><kbd>CTRL</kbd><i>+</i><span data-i18n="contact.kicker">TALK</span></p>
+            <h3 class="h3" data-i18n="contact.title">Let's talk</h3>
+            <p class="lead" data-i18n="contact.lead">Shopify store, social media or both? Send us the details and we'll come back with a plan.</p>
+            <ul class="contact__links">
+              <li><a class="key" data-contact="whatsapp" href="#" target="_blank" rel="noopener"><span data-i18n="contact.wa">WhatsApp us</span></a></li>
+              <li><a class="key" data-contact="email" href="#"><span data-contact-text="email"></span></a></li>
+              <li><a class="key" data-contact="instagram" href="https://www.instagram.com/ctrlmarketing.agency" target="_blank" rel="noopener" dir="ltr">@ctrlmarketing.agency</a></li>
+            </ul>
+          </div>
+
+          <form class="form reveal" id="contact-form" novalidate>
+            <div class="field">
+              <label for="f-name" data-i18n="f.name">Name *</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-email" data-i18n="f.email">Email *</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required dir="ltr">
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-phone" data-i18n="f.phone">Phone / WhatsApp</label>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" dir="ltr">
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-brand" data-i18n="f.brand">Brand name</label>
+              <input id="f-brand" name="brand" type="text" autocomplete="organization">
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-ig" data-i18n="f.ig">Instagram handle</label>
+              <input id="f-ig" name="instagram" type="text" placeholder="@yourbrand" dir="ltr">
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="f-service" data-i18n="f.service">Service needed *</label>
+              <select id="f-service" name="service" required>
+                <option value="" data-i18n="f.choose">Choose one</option>
+                <option value="Shopify store" data-i18n="svc1.t">Shopify Store Design &amp; Development</option>
+                <option value="Social media" data-i18n="svc2.t">Social Media Management &amp; Feed Design</option>
+                <option value="Content & AI video" data-i18n="svc3.t">Content Creation &amp; AI Video</option>
+                <option value="Brand strategy" data-i18n="svc4.t">Brand Strategy &amp; Identity</option>
+                <option value="Paid ads" data-i18n="svc5.t">Paid Ads (Meta / TikTok / Google)</option>
+                <option value="SEO" data-i18n="svc6.t">SEO &amp; Store Optimization</option>
+                <option value="Not sure" data-i18n="f.notsure">Not sure yet</option>
+              </select>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <!-- [REPLACE] budget ranges with your real packages -->
+            <div class="field field--full">
+              <label for="f-budget" data-i18n="f.budget">Budget range</label>
+              <select id="f-budget" name="budget">
+                <option value="" data-i18n="f.choose">Choose one</option>
+                <option value="Under EGP 25k" data-i18n="b1">Under EGP 25,000</option>
+                <option value="EGP 25k-50k" data-i18n="b2">EGP 25,000 to 50,000</option>
+                <option value="EGP 50k-100k" data-i18n="b3">EGP 50,000 to 100,000</option>
+                <option value="EGP 100k+" data-i18n="b4">EGP 100,000+</option>
+                <option value="Not sure" data-i18n="f.notsure">Not sure yet</option>
+              </select>
+            </div>
+            <div class="field field--full">
+              <label for="f-message" data-i18n="f.message">Tell us about your project *</label>
+              <textarea id="f-message" name="message" rows="5" required></textarea>
+              <p class="field__error" aria-live="polite"></p>
+            </div>
+            <div class="field--full form__foot">
+              <button class="key key--yellow key--lg" type="submit" data-i18n="f.send">Send message</button>
+              <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+            </div>
+            <div class="form__success" id="form-success" hidden tabindex="-1">
+              <p class="form__success-key" dir="ltr"><kbd>CTRL</kbd><i>+</i><kbd>ENTER</kbd></p>
+              <h3 data-i18n="f.ok.t">Message sent.</h3>
+              <p data-i18n="f.ok.d">Thanks! We'll be in touch within 24 hours.</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 11. FOOTER ============ -->
+  <footer class="footer">
+    <div class="wrap">
+      <p class="footer__reach" aria-hidden="true"><span data-i18n="footer.reach">REACH OUT</span><span class="dots">....</span></p>
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <svg class="footer__logo" role="img" aria-label="CTRL"><use href="#logo-key"/></svg>
+          <p class="mono" dir="ltr">NO NEED TO SHIFT BUSINESS<br><mark>WE CONTROL IT..</mark></p>
+        </div>
+        <nav aria-label="Footer">
+          <h3 data-i18n="footer.links">Quick links</h3>
+          <ul>
+            <li><a href="#work" data-i18n="nav.work">Work</a></li>
+            <li><a href="#social" data-i18n="nav.social">Social</a></li>
+            <li><a href="#process" data-i18n="nav.process">Process</a></li>
+            <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <h3 data-i18n="footer.services">Services</h3>
+          <ul>
+            <li data-i18n="svc1.s">Shopify</li>
+            <li data-i18n="svc2.s">Social</li>
+            <li data-i18n="svc3.s">Content &amp; AI</li>
+            <li data-i18n="svc5.s">Ads</li>
+          </ul>
+        </div>
+        <div>
+          <h3 data-i18n="footer.follow">Follow</h3>
+          <ul>
+            <li><a href="https://www.instagram.com/ctrlmarketing.agency" target="_blank" rel="noopener">Instagram ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 CTRL Agency</p>
+        <p dir="ltr"><kbd>CTRL</kbd><i>+</i><kbd>BRAND</kbd></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ CASE STUDY MODAL (filled by script.js) ============ -->
+  <dialog class="modal" id="case-modal" aria-labelledby="case-title">
+    <div class="modal__inner">
+      <button class="key key--sm modal__close" type="button" data-close aria-label="Close">ESC ✕</button>
+      <div id="case-body"></div>
+    </div>
+  </dialog>
+
+  <!-- ============ REEL PLAYER (full screen, with sound) ============ -->
+  <dialog class="player" id="player" aria-label="Reel">
+    <video id="player-video" playsinline controls></video>
+    <button class="key key--sm player__close" type="button" data-close aria-label="Close">ESC ✕</button>
+  </dialog>
+
+  <!-- ============ BRAND BOOK VIEWER ============ -->
+  <dialog class="book" id="book" aria-labelledby="book-title">
+    <header class="book__head">
+      <div>
+        <p class="mono book__count" id="book-count"></p>
+        <h2 class="book__title" id="book-title"></h2>
+      </div>
+      <button class="key key--sm" type="button" data-close aria-label="Close">ESC ✕</button>
+    </header>
+    <div class="book__track" id="book-track" tabindex="0"></div>
+    <div class="book__keys">
+      <button class="key key--sm" type="button" id="book-prev" aria-label="Previous page">←</button>
+      <button class="key key--sm" type="button" id="book-next" aria-label="Next page">→</button>
+    </div>
+  </dialog>
+
+  <!-- ============ FEED ZOOM (tap a phone in "Feeds by CTRL") ============ -->
+  <dialog class="zoom" id="feed-zoom" aria-label="Instagram feed">
+    <div class="zoom__stage">
+      <div class="zoom__phone" id="zoom-phone"></div>
+      <div class="zoom__info" id="zoom-info"></div>
+    </div>
+    <div class="zoom__keys">
+      <button class="key key--sm" type="button" id="zoom-prev" aria-label="Previous feed">←</button>
+      <p class="mono zoom__count" id="zoom-count"></p>
+      <button class="key key--sm" type="button" id="zoom-next" aria-label="Next feed">→</button>
+    </div>
+    <button class="key key--sm zoom__close" type="button" data-close aria-label="Close">ESC ✕</button>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
