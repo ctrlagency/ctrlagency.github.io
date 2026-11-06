@@ -276,15 +276,18 @@ const CLIPS = [
 /* ---------- 3b. BRANDS: brand books CTRL designed ----------
    pages: number of slides in images/brands/<id>/01.webp, 02.webp…  (slide decks)
    boards: long single-page boards that scroll top to bottom
-   siteId: links to that brand's website case study */
+   siteId: links to that brand's website case study
+   rebrand: the brand's old logo (before) vs CTRL's new identity (after); brands without it were built from scratch */
 const BRANDS = [
   { id: 'yamour', name: 'Yamour Kollection', boards: 2, siteId: 'yk-scent',
     industry: { en: 'Home fragrance · the brand behind YK Scent', ar: 'عطور منزلية · العلامة وراء YK Scent' } },
   { id: 'lektara', name: 'Lektara', pages: 11,
+    rebrand: { before: 'images/brands/lektara-before.webp', after: 'images/brands/lektara/01.webp' },
     industry: { en: 'Modest fashion · "Spread your wings"', ar: 'أزياء محتشمة' } },
   { id: 'maisa', name: 'Maisa Bosila', pages: 10,
     industry: { en: 'Fashion house', ar: 'دار أزياء' } },
   { id: 'stylivo', name: 'Stylivo', pages: 12,
+    rebrand: { before: 'images/brands/stylivo-before.webp', after: 'images/brands/stylivo/01.webp' },
     industry: { en: "Women's fashion · Egypt", ar: 'أزياء نسائية · مصر' } },
   { id: 'aurora', name: 'Aurora', boards: 2,
     industry: { en: 'Fashion · "A universe of style"', ar: 'أزياء' } },
@@ -297,7 +300,9 @@ const AR = {
   'nav.work': 'أعمالنا', 'nav.social': 'السوشيال', 'nav.services': 'خدماتنا', 'nav.process': 'طريقتنا', 'nav.contact': 'تواصل',
   'nav.talk': 'لنتحدث', 'nav.branding': 'الهوية',
   'clips.kicker': 'ريلز', 'clips.title': 'ريلز من CTRL', 'clips.lead': 'صوّرناها وعدّلناها ونشرناها لعملائنا. اسحب بينها، واضغط على أي واحدة لتشاهدها بالصوت.', 'nav.reels': 'ريلز',
-  'brands.kicker': 'هوية', 'brands.title': 'هويات من CTRL', 'brands.lead': 'الشعار والألوان والخطوط والتغليف. أدلة هوية صممناها من أول فكرة.',
+  'brands.kicker': 'هوية', 'brands.title': 'هويات من CTRL', 'brands.lead': 'الشعار والألوان والخطوط والتغليف. علامات بنيناها من الصفر، وعلامات أعدنا تصميم هويتها.',
+  'brands.rebrand': 'إعادة هوية', 'brands.scratch': 'من الصفر',
+  'rb.kicker': 'قبل ← بعد', 'rb.title': 'إعادة الهوية', 'rb.lead': 'اسحب الخط لترى الشعار القديم مقابل الهوية التي صممناها.', 'rb.before': 'قبل', 'rb.after': 'بعد', 'rb.open': 'دليل الهوية',
   'hero.eyebrow': 'وكالة تسويق للعلامات التجارية · القاهرة، مصر',
   'hero.title': 'اضغط CTRL وتحكّم في علامتك.',
   'hero.sub': 'نبني متاجر شوبيفاي وحضورًا قويًا على السوشيال ميديا لعلامات المنزل ونمط الحياة والأزياء.',
@@ -349,6 +354,8 @@ const AR = {
 
 /* English strings used only by JS (not in the HTML) */
 const EN_EXTRA = {
+  'brands.rebrand': 'Rebrand', 'brands.scratch': 'From scratch',
+  'rb.before': 'Before', 'rb.after': 'After', 'rb.open': 'Brand book',
   'hero.title': 'Take CTRL of your brand.',
   'card.visit': 'Visit live site', 'card.case': 'View case study', 'card.site': 'Website by CTRL',
   'car.prev': 'Previous website', 'car.next': 'Next website',
@@ -609,12 +616,44 @@ function renderBrands() {
       <button class="brand-row" type="button" data-brand="${esc(b.id)}">
         <span class="mono brand-row__num">00-${i + 1}</span>
         <span class="brand-row__name">${esc(b.name)}</span>
-        <span class="brand-row__meta">${esc(L(b.industry))}</span>
+        <span class="brand-row__meta"><b class="mono brand-tag${b.rebrand ? ' brand-tag--re' : ''}">${esc(t(b.rebrand ? 'brands.rebrand' : 'brands.scratch'))}</b>${esc(L(b.industry))}</span>
         <span class="brand-row__thumb"><img src="images/brands/${esc(b.id)}-cover.webp" alt="" loading="lazy" decoding="async"></span>
         <span class="brand-row__go" aria-hidden="true">↗</span>
       </button>
     </li>`).join('');
+  renderRebrands();
 }
+
+/* --- Rebrands: drag the divider to compare the old logo with CTRL's new identity --- */
+function renderRebrands() {
+  $('#rebrands-list').innerHTML = BRANDS.filter((b) => b.rebrand).map((b) => `
+    <li class="rebrand reveal">
+      <div class="compare" style="--pos:50%">
+        <img class="compare__img" src="${esc(b.rebrand.after)}" alt="${esc(b.name)} after CTRL's rebrand" loading="lazy" decoding="async">
+        <div class="compare__before"><img class="compare__img" src="${esc(b.rebrand.before)}" alt="${esc(b.name)} logo before the rebrand" loading="lazy" decoding="async"></div>
+        <span class="mono compare__label compare__label--before">${esc(t('rb.before'))}</span>
+        <span class="mono compare__label compare__label--after">${esc(t('rb.after'))}</span>
+        <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="${esc(b.name)}: ${esc(t('rb.before'))} / ${esc(t('rb.after'))}">
+        <span class="compare__handle" aria-hidden="true"><i>◀ ▶</i></span>
+      </div>
+      <div class="rebrand__foot">
+        <h3 class="rebrand__name">${esc(b.name)}</h3>
+        <button class="key key--sm" type="button" data-brand="${esc(b.id)}">${esc(t('rb.open'))} ↗</button>
+      </div>
+    </li>`).join('');
+}
+
+(() => {
+  const wrap = $('#rebrands-list');
+  wrap.addEventListener('input', (e) => {
+    if (!e.target.matches('.compare__range')) return;
+    e.target.closest('.compare').style.setProperty('--pos', `${e.target.value}%`); // RTL: the range runs right-to-left, so does --pos
+  });
+  wrap.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-brand]');
+    if (b) openBook(b.dataset.brand);
+  });
+})();
 
 (() => {
   const list = $('#brands-list');
