@@ -19,8 +19,9 @@ const CONFIG = {
   // [REPLACE] Create a form at https://formspree.io and paste its endpoint here.
   // Until then the form validates and shows the success message without sending anything.
   formspree: 'https://formspree.io/f/YOUR_FORM_ID',
-  whatsapp: '20XXXXXXXXXX',            // [REPLACE] digits only, country code first (Egypt = 20)
-  email: 'hello@your-domain.com',      // [REPLACE]
+  whatsapp: '201017453583',            // digits only, country code first (Egypt = 20)
+  phone: '01017453583',
+  email: 'Nabil.ctrlagency@gmail.com',
   instagram: 'https://www.instagram.com/ctrlmarketing.agency',
 };
 
@@ -262,6 +263,21 @@ const REELS = [
 ];
 
 /* ---------- 3a. CLIPS: reels CTRL shot and edited (files in video/work/, stills in images/reels/) ---------- */
+/* ---------- 3a. FOOD & BEVERAGES: reels in video/fnb/, stills in images/fnb/ ---------- */
+const FNB = [
+  { id: 'padaria-cake', client: 'Padaria', title: { en: 'Chocolate cake', ar: 'كيكة الشوكولاتة' } },
+  { id: 'demas-pizza', client: 'Demas', title: { en: 'Pizza from the oven', ar: 'بيتزا من الفرن' } },
+  { id: 'coffeebay-street', client: 'Coffee Bay', title: { en: 'Street interviews', ar: 'لقاءات في الشارع' } },
+  { id: 'era-drinks', client: 'Era', title: { en: 'Drinks & plates', ar: 'مشروبات وأطباق' } },
+  { id: 'padaria-croissant', client: 'Padaria', title: { en: 'Croissant, filled', ar: 'كرواسون محشي' } },
+  { id: 'padaria-sandwich', client: 'Padaria', title: { en: 'Croissant sandwich', ar: 'ساندوتش كرواسون' } },
+  { id: 'padaria-eclair', client: 'Padaria', title: { en: 'Éclair & ice cream', ar: 'إكلير وآيس كريم' } },
+  { id: 'padaria-salad', client: 'Padaria', title: { en: 'Salad bar', ar: 'السلطات' } },
+  { id: 'padaria-donut', client: 'Padaria', title: { en: 'Meet the bakers', ar: 'تعرّف على الخبازين' } },
+  { id: 'padaria-cruffin', client: 'Padaria', title: { en: 'Cruffin', ar: 'كرافن' } },
+  { id: 'padaria-pastry', client: 'Padaria', title: { en: 'Fresh pastry', ar: 'معجنات طازجة' } },
+];
+
 const CLIPS = [
   { id: 'yk-gifting', client: '@yk.scent', title: { en: 'Corporate gifting', ar: 'هدايا الشركات' }, video: 'video/work/yk-gifting.mp4', poster: 'images/reels/yk-gifting.webp' },
   { id: 'multicraft-furniture', client: '@multi_craft.design', title: { en: 'Bespoke furniture', ar: 'أثاث حسب الطلب' }, video: 'video/work/multicraft-furniture.mp4', poster: 'images/reels/multicraft-furniture.webp' },
@@ -279,18 +295,52 @@ const CLIPS = [
    siteId: links to that brand's website case study
    rebrand: the brand's old logo (before) vs CTRL's new identity (after); brands without it were built from scratch */
 const BRANDS = [
-  { id: 'yamour', name: 'Yamour Kollection', boards: 2, siteId: 'yk-scent',
+  { id: 'yamour', name: 'Yamour Kollection', boards: 2, siteId: 'yk-scent', scratch: true,
     industry: { en: 'Home fragrance · the brand behind YK Scent', ar: 'عطور منزلية · العلامة وراء YK Scent' } },
   { id: 'lektara', name: 'Lektara', pages: 11,
     rebrand: { before: 'images/brands/lektara-before.webp', after: 'images/brands/lektara/01.webp' },
     industry: { en: 'Modest fashion · "Spread your wings"', ar: 'أزياء محتشمة' } },
-  { id: 'maisa', name: 'Maisa Bosila', pages: 10,
+  { id: 'maisa', name: 'Maisa Bosila', pages: 10, scratch: true,
     industry: { en: 'Fashion house', ar: 'دار أزياء' } },
   { id: 'stylivo', name: 'Stylivo', pages: 12,
     rebrand: { before: 'images/brands/stylivo-before.webp', after: 'images/brands/stylivo/01.webp' },
     industry: { en: "Women's fashion · Egypt", ar: 'أزياء نسائية · مصر' } },
-  { id: 'aurora', name: 'Aurora', boards: 2,
+  { id: 'aurora', name: 'Aurora', boards: 2, scratch: true,
     industry: { en: 'Fashion · "A universe of style"', ar: 'أزياء' } },
+  // from the CTRL portfolio (pages in images/brands/<id>/)
+  { id: 'alrhala', name: 'AlRhala Foods', pages: 6,
+    industry: { en: 'Food products · logo, labels & packaging', ar: 'منتجات غذائية · شعار وملصقات وتغليف' } },
+  { id: 'sinnara', name: 'Sinnara', pages: 2,
+    industry: { en: 'Seafood restaurant · logo, menu & cards', ar: 'مطعم مأكولات بحرية · شعار ومنيو وكروت' } },
+  { id: 'dunyas', name: 'Dunyas', pages: 2,
+    industry: { en: 'Fashion store · logo, packaging & vouchers', ar: 'متجر أزياء · شعار وتغليف وقسائم' } },
+  { id: 'naoum', name: 'Naoum', pages: 2,
+    industry: { en: 'Fashion brand · "unique as you are"', ar: 'علامة أزياء' } },
+  { id: 'kemii', name: 'Kemii', pages: 1,
+    industry: { en: 'Haute couture designer', ar: 'مصممة أزياء راقية' } },
+  { id: 'peacocka', name: 'Peacocka', pages: 1,
+    industry: { en: 'Fashion brand · packaging', ar: 'علامة أزياء · تغليف' } },
+];
+
+/* ---------- 3c. DESIGNS: social media post sets from the portfolio (images/designs/<id>/) ---------- */
+const DESIGNS = [
+  { id: 'stylivo', name: 'Stylivo', pages: 1, industry: { en: 'Fashion brand', ar: 'علامة أزياء' } },
+  { id: 'sinnara', name: 'Sinnara', pages: 1, industry: { en: 'Seafood restaurant', ar: 'مطعم مأكولات بحرية' } },
+  { id: 'dunyas', name: 'Dunyas', pages: 2, industry: { en: 'Fashion store', ar: 'متجر أزياء' } },
+  { id: 'wh-holidays', name: 'WH Holidays', pages: 1, industry: { en: 'Travel company', ar: 'شركة سياحة' } },
+  { id: 'mg-clinic', name: 'MG Clinic', pages: 1, industry: { en: 'Physical therapy clinic', ar: 'عيادة علاج طبيعي' } },
+  { id: 'beautify', name: 'Beautify.co', pages: 1, industry: { en: 'Cosmetics', ar: 'مستحضرات تجميل' } },
+];
+
+/* ---------- 3d. CLIENTS: logo wall (images/clients/<id>.webp) ---------- */
+const CLIENTS = [
+  ['egypt-carpets', 'Egypt Carpets'], ['homzmart', 'Homzmart'], ['good-design', 'Good Design'], ['lulu', 'LuLu'],
+  ['stylivo', 'Stylivo'], ['dnmk', 'DNMK Jeans Wear'], ['fleur', 'Fleur Chocolates'], ['naoum', 'Naoum'],
+  ['alrhala', 'AlRhala Foods'], ['sinnara', 'Sinnara'], ['kemii', 'Kemii Haute Couture'], ['dunyas', 'Dunyas'],
+  ['yk', 'YK'], ['lektara', 'Lektara'], ['aurora', 'Aurora'], ['maisa-bosila', 'Maisa Bosila'],
+  ['multi-craft', 'Multi Craft'], ['tolle', 'Tolle'], ['kuni', 'Kuni'], ['mj-designs', 'MJ Designs'],
+  ['kyra', 'Kyra Naturals'], ['fashion-avenue', 'Fashion Avenue Cairo'], ['shopless', 'Shopless'],
+  ['we-love-the-perfect', 'We Love The Perfect'], ['umodest', 'Umodest'], ['ettamen', 'Ettamen Clinic'],
 ];
 
 /* ---------- 4. Arabic translations ----------
@@ -298,7 +348,23 @@ const BRANDS = [
 const AR = {
   'a11y.skip': 'انتقل إلى المحتوى',
   'nav.work': 'أعمالنا', 'nav.social': 'السوشيال', 'nav.services': 'خدماتنا', 'nav.process': 'طريقتنا', 'nav.contact': 'تواصل',
-  'nav.talk': 'لنتحدث', 'nav.branding': 'الهوية',
+  'nav.talk': 'لنتحدث', 'nav.branding': 'الهوية', 'nav.about': 'من نحن', 'nav.results': 'النتائج',
+  'about.kicker': 'من نحن', 'about.title': 'نساعدك تدخل السوق بقوة.',
+  'about.lead': 'فريق متمرّس بنى CTRL بعناية ليساعدك تدخل السوق بطريقة تربطك بجمهورك وتضع علامتك تحت الأضواء.',
+  'about.p': 'نحب أن نساعدك تجد صوتك الإبداعي. نرشد عملاءنا وسط تحديات السوق الحديث ليكبروا في عالم يتغير بسرعة.',
+  'about.founder': 'المؤسِّسة', 'about.role': 'المؤسِّسة ومديرة التسويق', 'about.quote': '«نركز على فهم احتياجاتك، بهدف واحد: زيادة مبيعاتك.»', 'about.cta': 'ابدأ',
+  'services.lead': 'ثماني خدمات، فريق واحد. اختر خدمة أو اترك لنا كل شيء.',
+  'svc7.t': 'الهدايا الترويجية', 'svc7.d': 'منتجات ترويجية لعلامتك بأسعار منافسة وأعلى جودة.', 'svc7.s': 'هدايا', 'svc7.w': 'هدايا',
+  'svc8.t': 'شراء الإعلانات', 'svc8.d': 'تخطيط إعلامي متخصص يستغل كل جنيه في ميزانيتك على ميتا وتيك توك وجوجل للوصول للجمهور الصحيح.', 'svc8.s': 'شراء الإعلانات', 'svc8.w': 'إعلانات',
+  'results.kicker': 'شراء الإعلانات', 'results.title': 'ميزانية إعلانات تدخل، ومبيعات تخرج.',
+  'results.lead': 'نتائج حقيقية من حملات ميتا خططنا لها وأدرناها. العائد = المبيعات مقابل كل جنيه.',
+  'results.n1': 'المجال: أزياء نسائية', 'results.n2': 'المجال: أحذية نسائية', 'results.n3': 'المجال: ستريت وير',
+  'results.spent': 'الإنفاق', 'results.sales': 'المبيعات',
+  'results.note': 'شراء الإعلانات يحتاج خبرة وعلاقات. نضع لك الخطة المناسبة للنمو الذي تريده.',
+  'clients.kicker': 'عملاؤنا', 'clients.title': 'عملاؤنا', 'clients.lead': 'علامات في الأزياء والأكل والمنزل والتجميل والصحة والسياحة تثق بنا في نموها.',
+  'social.g3': 'تصميمات البوستات', 'social.g3d': 'بوستات حملات صممناها لعلامات أزياء وسياحة وصحة وتجميل وأكل. اضغط لترى المجموعة كاملة.',
+  'cta.keys': 'لا تقلق، نحن نتحكم في مشاريعك. لا مجال للهروب من النجاح.', 'nav.fnb': 'أكل ومشروبات',
+  'fnb.kicker': 'مذاق', 'fnb.title': 'أكل ومشروبات', 'fnb.lead': 'لقطات قريبة ووصفات ولقاءات في الشارع لكافيهات ومخابز ومطاعم. اضغط على أي ريل لتشاهده بالصوت.',
   'clips.kicker': 'ريلز', 'clips.title': 'ريلز من CTRL', 'clips.lead': 'صوّرناها وعدّلناها ونشرناها لعملائنا. اسحب بينها، واضغط على أي واحدة لتشاهدها بالصوت.', 'nav.reels': 'ريلز',
   'brands.kicker': 'هوية', 'brands.title': 'هويات من CTRL', 'brands.lead': 'الشعار والألوان والخطوط والتغليف. علامات بنيناها من الصفر، وعلامات أعدنا تصميم هويتها.',
   'brands.rebrand': 'إعادة هوية', 'brands.scratch': 'من الصفر',
@@ -320,12 +386,12 @@ const AR = {
   'social.g1': 'بنيناها من الصفر', 'social.g1d': 'الهوية، متجر شوبيفاي، المحتوى والفيد: بنينا كل شيء.',
   'social.g2': 'شركاء المحتوى', 'social.g2d': 'علامات نصنع لها المحتوى الآن.',
   'services.kicker': 'خدمات', 'services.title': 'ما نتحكم فيه',
-  'svc1.t': 'تصميم وتطوير متاجر شوبيفاي', 'svc1.d': 'متاجر شوبيفاي مخصصة، من تصميم الواجهة حتى الدفع، بمظهر فاخر ومبنية للبيع.', 'svc1.s': 'شوبيفاي', 'svc1.w': 'متاجر',
-  'svc2.t': 'إدارة السوشيال ميديا وتصميم الفيد', 'svc2.d': 'خطط محتوى شهرية، تصميم الفيد، كتابة الكابشن وإدارة التفاعل.', 'svc2.s': 'سوشيال', 'svc2.w': 'فيد',
-  'svc3.t': 'صناعة المحتوى وفيديو الذكاء الاصطناعي', 'svc3.d': 'تصوير المنتجات، الريلز، وفيديوهات بالذكاء الاصطناعي توقف التمرير.', 'svc3.s': 'محتوى وذكاء اصطناعي', 'svc3.w': 'ريلز',
-  'svc4.t': 'استراتيجية وهوية العلامة', 'svc4.d': 'تموضع ونبرة وهوية بصرية تجعل علامتك لا تُنسى.', 'svc4.s': 'الهوية', 'svc4.w': 'هوية',
-  'svc5.t': 'الإعلانات الممولة (ميتا / تيك توك / جوجل)', 'svc5.d': 'حملات نخطط لها ونطلقها ونحسّنها لتحقيق المبيعات، لا الإعجابات فقط.', 'svc5.s': 'إعلانات', 'svc5.w': 'إعلانات',
-  'svc6.t': 'تحسين محركات البحث والمتجر', 'svc6.d': 'تحسين السرعة والظهور في البحث ومعدل التحويل ليصبح زوارك عملاء.', 'svc6.s': 'SEO', 'svc6.w': 'SEO',
+  'svc1.t': 'تصميم الهوية', 'svc1.d': 'نضع علامتك في مكانها الصحيح في ذهن جمهورك: شعار وألوان وخطوط وتغليف.', 'svc1.s': 'الهوية', 'svc1.w': 'هوية',
+  'svc2.t': 'التسويق بالعمولة', 'svc2.d': 'نزيد مبيعاتك بالتعاقد مع شركاء يجلبون عملاء محتملين لشركتك.', 'svc2.s': 'العمولة', 'svc2.w': 'شركاء',
+  'svc3.t': 'التسويق عبر السوشيال ميديا', 'svc3.d': 'نسوّق لعملك ببوستات إبداعية وخطط محتوى شهرية وتصميم الفيد.', 'svc3.s': 'سوشيال', 'svc3.w': 'سوشيال',
+  'svc4.t': 'تطوير المواقع', 'svc4.d': 'نصمم خريطة الموقع والمحتوى والتصميم والمنصة، من متاجر شوبيفاي مبنية للبيع إلى مواقع العلامات.', 'svc4.s': 'المواقع', 'svc4.w': 'ويب',
+  'svc5.t': 'الإنتاج الإعلامي', 'svc5.d': 'فريق إنتاج من المصورين وصناع الفيديو يقدم لك التصوير والريلز وفيديوهات الذكاء الاصطناعي التي تريدها.', 'svc5.s': 'الإنتاج', 'svc5.w': 'تصوير',
+  'svc6.t': 'العلاقات العامة', 'svc6.d': 'ندعم علامتك بربطك بالشخصيات العامة والمشاهير.', 'svc6.s': 'علاقات عامة', 'svc6.w': 'PR',
   'process.kicker': 'خطوات', 'process.title': 'طريقة عملنا',
   'p1.k': 'اكتشف', 'p1.d': 'نتعرّف على علامتك وجمهورك ومنافسيك وأهدافك.',
   'p2.k': 'خطّط', 'p2.d': 'خريطة طريق واضحة: هيكل الموقع، تقويم المحتوى، والحملات.',
@@ -616,12 +682,33 @@ function renderBrands() {
       <button class="brand-row" type="button" data-brand="${esc(b.id)}">
         <span class="mono brand-row__num">00-${i + 1}</span>
         <span class="brand-row__name">${esc(b.name)}</span>
-        <span class="brand-row__meta"><b class="mono brand-tag${b.rebrand ? ' brand-tag--re' : ''}">${esc(t(b.rebrand ? 'brands.rebrand' : 'brands.scratch'))}</b>${esc(L(b.industry))}</span>
+        <span class="brand-row__meta">${b.rebrand || b.scratch ? `<b class="mono brand-tag${b.rebrand ? ' brand-tag--re' : ''}">${esc(t(b.rebrand ? 'brands.rebrand' : 'brands.scratch'))}</b>` : ''}${esc(L(b.industry))}</span>
         <span class="brand-row__thumb"><img src="images/brands/${esc(b.id)}-cover.webp" alt="" loading="lazy" decoding="async"></span>
         <span class="brand-row__go" aria-hidden="true">↗</span>
       </button>
     </li>`).join('');
   renderRebrands();
+  renderDesigns();
+  renderClients();
+}
+
+function renderDesigns() {
+  $('#designs-list').innerHTML = DESIGNS.map((d) => `
+    <li class="reveal">
+      <button class="design" type="button" data-design="${esc(d.id)}">
+        <img src="images/designs/${esc(d.id)}-cover.webp" alt="" loading="lazy" decoding="async">
+        <span class="design__foot"><b>${esc(d.name)}</b><span class="mono">${esc(L(d.industry))}</span></span>
+      </button>
+    </li>`).join('');
+}
+$('#designs-list').addEventListener('click', (e) => {
+  const b = e.target.closest('[data-design]');
+  if (b) openBook(b.dataset.design, DESIGNS, 'designs');
+});
+
+function renderClients() {
+  $('#clients-grid').innerHTML = CLIENTS.map(([id, name]) => `
+    <li class="client reveal"><img src="images/clients/${esc(id)}.webp" alt="${esc(name)}" loading="lazy" decoding="async"></li>`).join('');
 }
 
 /* --- Rebrands: drag the divider to compare the old logo with CTRL's new identity --- */
@@ -685,6 +772,35 @@ function renderRebrands() {
     if (row) openBook(row.dataset.brand);
   });
 })();
+
+/* --- Food & Beverages: a sideways rail; reels on screen play muted, tap opens one with sound --- */
+const fnbRail = $('#fnb-rail');
+const fnbObserver = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+  entries.forEach(({ target, isIntersecting }) => {
+    const v = $('video', target);
+    if (isIntersecting && !reduceMotion && !$('#player').open) {
+      if (!v.getAttribute('src')) v.src = v.dataset.src;
+      v.play().then(() => target.classList.add('is-playing')).catch(() => {});
+    } else v.pause();
+  });
+}, { threshold: 0.6 }) : null;
+
+function renderFnb() {
+  fnbRail.innerHTML = FNB.map((f, i) => `
+    <button class="fnb__item${i % 2 ? ' fnb__item--low' : ''}" type="button" data-fnb="${i}" aria-label="${esc(f.client)}: ${esc(L(f.title))}">
+      <img src="images/fnb/${esc(f.id)}.jpg" alt="" loading="lazy" decoding="async">
+      <video muted loop playsinline preload="none" data-src="video/fnb/${esc(f.id)}.mp4"></video>
+      <span class="fnb__label"><b class="mono" dir="ltr">${esc(f.client)}</b>${esc(L(f.title))}</span>
+      <span class="fnb__play" aria-hidden="true">▶</span>
+    </button>`).join('');
+  if (fnbObserver) $$('.fnb__item', fnbRail).forEach((el) => fnbObserver.observe(el));
+}
+fnbRail.addEventListener('click', (e) => {
+  const item = e.target.closest('[data-fnb]');
+  if (!item) return;
+  const f = FNB[item.dataset.fnb];
+  playVideo(`video/fnb/${f.id}.mp4`, `images/fnb/${f.id}.jpg`);
+});
 
 /* --- Reels strip: drag sideways; the reel nearest the centre grows and plays --- */
 const strip = $('#strip');
@@ -792,10 +908,12 @@ const player = $('#player');
 const playerVideo = $('#player-video');
 function openPlayer(i) {
   const c = CLIPS[i];
-  if (!c) return;
-  $$('.clip video', strip).forEach((v) => v.pause());
-  playerVideo.src = c.video;
-  playerVideo.poster = c.poster;
+  if (c) playVideo(c.video, c.poster);
+}
+function playVideo(src, poster) {
+  $$('.clip video, .fnb__item video').forEach((v) => v.pause());
+  playerVideo.src = src;
+  playerVideo.poster = poster;
   playerVideo.muted = false;
   player.showModal();
   document.body.classList.add('is-locked');
@@ -815,19 +933,19 @@ const book = $('#book');
 const bookTrack = $('#book-track');
 let bookBrand = null;
 
-function openBook(id) {
-  const b = BRANDS.find((x) => x.id === id);
+function openBook(id, list = BRANDS, dir = 'brands') {
+  const b = list.find((x) => x.id === id);
   if (!b) return;
   bookBrand = b;
   const pad2 = (n) => String(n).padStart(2, '0');
   const imgs = b.pages
-    ? Array.from({ length: b.pages }, (_, i) => `images/brands/${b.id}/${pad2(i + 1)}.webp`)
-    : Array.from({ length: b.boards }, (_, i) => `images/brands/${b.id}/board-${i + 1}.webp`);
+    ? Array.from({ length: b.pages }, (_, i) => `images/${dir}/${b.id}/${pad2(i + 1)}.webp`)
+    : Array.from({ length: b.boards }, (_, i) => `images/${dir}/${b.id}/board-${i + 1}.webp`);
   bookTrack.classList.toggle('book__track--board', !b.pages);
   bookTrack.innerHTML = imgs.map((src, i) =>
     `<figure class="book__slide"><img src="${src}" alt="${esc(b.name)} brand book, ${b.pages ? `page ${i + 1}` : `board ${i + 1}`}" ${i > 1 ? 'loading="lazy"' : ''} decoding="async"></figure>`).join('');
   $('#book-title').textContent = b.name;
-  $('.book__keys').hidden = !b.pages;
+  $('.book__keys').hidden = !b.pages || b.pages < 2;
   book.showModal();
   document.body.classList.add('is-locked');
   bookTrack.scrollTo({ left: 0, top: 0 });
@@ -1056,6 +1174,7 @@ function renderAll() {
   renderFeeds();
   renderReels();
   renderBrands();
+  renderFnb();
   renderClips();
   observeReveals();
   if (modal.open && modal.dataset.id) fillCase(modal.dataset.id); // re-translate an open case study
@@ -1301,6 +1420,8 @@ document.addEventListener('touchstart', () => {}, { passive: true }); // enables
 $$('[data-contact="whatsapp"]').forEach((a) => { a.href = `https://wa.me/${CONFIG.whatsapp}`; });
 $$('[data-contact="email"]').forEach((a) => { a.href = `mailto:${CONFIG.email}`; });
 $$('[data-contact-text="email"]').forEach((el) => { el.textContent = CONFIG.email; });
+$$('[data-contact="phone"]').forEach((a) => { a.href = `tel:+2${CONFIG.phone}`; });
+$$('[data-contact-text="phone"]').forEach((el) => { el.textContent = CONFIG.phone; });
 $$('[data-contact="instagram"]').forEach((a) => { a.href = CONFIG.instagram; });
 
 /* ---------- 11. Contact form ---------- */
