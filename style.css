@@ -771,3 +771,43 @@ html[dir="rtl"] .fnb__play { right: auto; left: 12px; }
 .cta__keys .kbd--space { padding-inline: 2.2em; }
 html[lang="ar"] .cta__keys { font-family: var(--f-body); text-transform: none; letter-spacing: 0; }
 html[lang="ar"] [data-only="en"], html:not([lang="ar"]) [data-only="ar"] { display: none; }
+
+/* ---------- Services: example tiles inside Brand / Social / Media production ---------- */
+.panel--media .panel__body { grid-template-rows: auto auto auto auto auto 1fr; }
+.panel--media .panel__body .panel__word { font-size: clamp(2.6rem, 6vw, 5.6rem); }
+.panel__media { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; max-width: 560px; }
+.panel__media button { all: unset; box-sizing: border-box; cursor: pointer; border-radius: 10px; overflow: hidden; background: rgba(0,0,0,.15); aspect-ratio: 4 / 3; transition: transform .3s var(--ease); }
+.panel__media--reels { max-width: 400px; }
+.panel__media--social { max-width: 460px; }
+.panel__media--social button { aspect-ratio: 1; }
+.panel__media--reels button { aspect-ratio: 9 / 13; }
+.panel__media button:hover { transform: translateY(-3px); }
+.panel__media button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.panel__media img, .panel__media video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.panel__more { justify-self: start; font: 400 1.15rem/1 var(--f-mono); text-transform: uppercase; letter-spacing: .05em; color: inherit; text-decoration: underline; text-underline-offset: 4px; }
+html[lang="ar"] .panel__more { font-family: var(--f-body); text-transform: none; letter-spacing: 0; }
+@media (max-width: 760px) {
+  .panel__media { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .panel__media--reels { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ---------- Tapes: crossing straps between About and Services ---------- */
+.tapes { position: relative; height: clamp(150px, 16vw, 230px); background: var(--paper); overflow: hidden; direction: ltr; }
+.tape { position: absolute; left: -5%; width: 110%; top: 50%; padding: clamp(12px, 1.6vw, 18px) 0; overflow: hidden; border-block: 2px solid var(--ink); }
+.tape--yellow { background: var(--yellow); color: var(--ink); transform: translateY(-50%) rotate(-3.5deg); z-index: 2; box-shadow: 0 14px 30px -18px rgba(0,0,0,.5); }
+.tape--black { background: var(--ink); color: var(--yellow); transform: translateY(-50%) rotate(3deg); z-index: 1; }
+.tape__track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.tape__track--rev { animation-direction: reverse; animation-duration: 46s; }
+.tape__group { display: flex; align-items: center; flex-shrink: 0; }
+.tape__item { font: 900 clamp(1.3rem, 2.6vw, 2.3rem)/1 var(--f-head); font-stretch: 115%; letter-spacing: -0.02em; text-transform: uppercase; white-space: nowrap; padding-inline: clamp(14px, 2vw, 26px); }
+html[lang="ar"] .tape__item { font-weight: 700; letter-spacing: 0; text-transform: none; }
+.tape__star { font-size: clamp(1rem, 2vw, 1.6rem); }
+.tape .marquee__sep { width: clamp(22px, 2.4vw, 32px); height: clamp(22px, 2.4vw, 32px); }
+@media (prefers-reduced-motion: reduce) { .tape__track { animation: none; } }
+.about { padding-bottom: clamp(36px, 4.5vw, 64px); }
+#services { padding-top: clamp(36px, 4.5vw, 64px); }
+@media (max-width: 760px) {
+  .tapes { height: 170px; }
+  .tape--yellow { transform: translateY(-50%) translateY(-14px) rotate(-6deg); }
+  .tape--black { transform: translateY(-50%) translateY(14px) rotate(5deg); }
+}

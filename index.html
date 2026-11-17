@@ -116,7 +116,6 @@
           <p class="about__p" data-i18n="about.p">We're passionate about helping you find your creative voice. We guide our clients through the minefields of modern business, helping them thrive in a fast-changing world.</p>
           <ul class="about__chips" aria-label="What CTRL does">
             <li><a class="chip" href="#services" data-i18n="svc1.t">Brand Design</a></li>
-            <li><a class="chip" href="#services" data-i18n="svc2.t">Affiliate Marketing</a></li>
             <li><a class="chip" href="#services" data-i18n="svc3.t">Social Media Marketing</a></li>
             <li><a class="chip" href="#services" data-i18n="svc4.t">Website Development</a></li>
             <li><a class="chip" href="#services" data-i18n="svc5.t">Media Production</a></li>
@@ -138,16 +137,22 @@
       </div>
     </section>
 
+    <!-- ============ 3b-2. TAPES: two crossing moving straps between About and Services ============ -->
+    <div class="tapes" aria-hidden="true">
+      <div class="tape tape--yellow"><div class="tape__track" id="tape-a"></div></div>
+      <div class="tape tape--black"><div class="tape__track tape__track--rev" id="tape-b"></div></div>
+    </div>
+
     <!-- ============ 3c. SERVICES (from the CTRL portfolio) 7. SERVICES: expanding panels (reference 4) ============ -->
     <section class="section section--paper" id="services">
       <div class="wrap">
         <header class="section__head reveal">
           <p class="kicker"><kbd>CTRL</kbd><i>+</i><span data-i18n="services.kicker">SERVICES</span></p>
           <h2 class="h2" data-i18n="services.title">What we take CTRL of</h2>
-          <p class="lead" data-i18n="services.lead">Eight services, one team. Pick one or let us run the whole thing.</p>
+          <p class="lead" data-i18n="services.lead">Seven services, one team. Pick one or let us run the whole thing.</p>
         </header>
         <div class="panels reveal" id="panels">
-          <article class="panel is-open">
+          <article class="panel panel--media is-open">
             <button class="panel__head" type="button" aria-expanded="true">
               <span class="panel__num">00-1</span>
               <span class="panel__short" data-i18n="svc1.s">Brand</span>
@@ -156,64 +161,73 @@
               <span class="panel__num panel__num--big">00-1</span>
               <h3 data-i18n="svc1.t">Brand Design</h3>
               <p data-i18n="svc1.d">We position your brand where it belongs in the mind of your target audience: logo, colours, type and packaging.</p>
+              <div class="panel__media panel__media--brand">
+                <button type="button" data-book="stylivo" aria-label="Stylivo brand book"><img src="images/brands/stylivo-cover.webp" alt="" loading="lazy" decoding="async"></button>
+                <button type="button" data-book="lektara" aria-label="Lektara brand book"><img src="images/brands/lektara-cover.webp" alt="" loading="lazy" decoding="async"></button>
+                <button type="button" data-book="alrhala" aria-label="AlRhala Foods brand book"><img src="images/brands/alrhala-cover.webp" alt="" loading="lazy" decoding="async"></button>
+                <button type="button" data-book="naoum" aria-label="Naoum brand book"><img src="images/brands/naoum-cover.webp" alt="" loading="lazy" decoding="async"></button>
+              </div>
+              <a class="panel__more" href="#branding" data-i18n="svc.more1">See all branding →</a>
               <p class="panel__word" aria-hidden="true" data-i18n="svc1.w">BRAND</p>
             </div>
           </article>
-          <article class="panel">
+          <article class="panel panel--media">
             <button class="panel__head" type="button" aria-expanded="false">
               <span class="panel__num">00-2</span>
-              <span class="panel__short" data-i18n="svc2.s">Affiliate</span>
-            </button>
-            <div class="panel__body">
-              <span class="panel__num panel__num--big">00-2</span>
-              <h3 data-i18n="svc2.t">Affiliate Marketing</h3>
-              <p data-i18n="svc2.d">We grow your sales by contracting with partners who bring leads to your company.</p>
-              <p class="panel__word" aria-hidden="true" data-i18n="svc2.w">PARTNERS</p>
-            </div>
-          </article>
-          <article class="panel">
-            <button class="panel__head" type="button" aria-expanded="false">
-              <span class="panel__num">00-3</span>
               <span class="panel__short" data-i18n="svc3.s">Social</span>
             </button>
             <div class="panel__body">
-              <span class="panel__num panel__num--big">00-3</span>
+              <span class="panel__num panel__num--big">00-2</span>
               <h3 data-i18n="svc3.t">Social Media Marketing</h3>
               <p data-i18n="svc3.d">We market your business with creative posts, monthly content plans and feed design.</p>
+              <div class="panel__media panel__media--social">
+                <button type="button" data-design="stylivo" aria-label="Stylivo post designs"><img src="images/designs/stylivo-thumb.webp" alt="" loading="lazy" decoding="async"></button>
+                <button type="button" data-design="sinnara" aria-label="Sinnara post designs"><img src="images/designs/sinnara-thumb.webp" alt="" loading="lazy" decoding="async"></button>
+                <button type="button" data-design="dunyas" aria-label="Dunyas post designs"><img src="images/designs/dunyas-thumb.webp" alt="" loading="lazy" decoding="async"></button>
+                <button type="button" data-design="mg-clinic" aria-label="MG Clinic post designs"><img src="images/designs/mg-clinic-thumb.webp" alt="" loading="lazy" decoding="async"></button>
+              </div>
+              <a class="panel__more" href="#social" data-i18n="svc.more3">See feeds & post designs →</a>
               <p class="panel__word" aria-hidden="true" data-i18n="svc3.w">SOCIAL</p>
             </div>
           </article>
           <article class="panel">
             <button class="panel__head" type="button" aria-expanded="false">
-              <span class="panel__num">00-4</span>
+              <span class="panel__num">00-3</span>
               <span class="panel__short" data-i18n="svc4.s">Website</span>
             </button>
             <div class="panel__body">
-              <span class="panel__num panel__num--big">00-4</span>
+              <span class="panel__num panel__num--big">00-3</span>
               <h3 data-i18n="svc4.t">Website Development</h3>
               <p data-i18n="svc4.d">We create the website map, content, design and platform, from Shopify stores built to sell to brand sites.</p>
               <p class="panel__word" aria-hidden="true" data-i18n="svc4.w">WEB</p>
             </div>
           </article>
-          <article class="panel">
+          <article class="panel panel--media">
             <button class="panel__head" type="button" aria-expanded="false">
-              <span class="panel__num">00-5</span>
+              <span class="panel__num">00-4</span>
               <span class="panel__short" data-i18n="svc5.s">Production</span>
             </button>
             <div class="panel__body">
-              <span class="panel__num panel__num--big">00-5</span>
+              <span class="panel__num panel__num--big">00-4</span>
               <h3 data-i18n="svc5.t">Media Production</h3>
               <p data-i18n="svc5.d">Our production team of photographers and videographers delivers the shoots, reels and AI videos you want.</p>
+              <div class="panel__media panel__media--reels">
+                <button type="button" data-video="video/fnb/padaria-cake.mp4" data-poster="images/fnb/padaria-cake.jpg" aria-label="Padaria chocolate cake reel"><video muted loop playsinline preload="none" poster="images/fnb/padaria-cake.jpg" data-src="video/fnb/padaria-cake.mp4"></video></button>
+                <button type="button" data-video="video/fnb/demas-pizza.mp4" data-poster="images/fnb/demas-pizza.jpg" aria-label="Demas pizza reel"><video muted loop playsinline preload="none" poster="images/fnb/demas-pizza.jpg" data-src="video/fnb/demas-pizza.mp4"></video></button>
+                <button type="button" data-video="video/fnb/era-drinks.mp4" data-poster="images/fnb/era-drinks.jpg" aria-label="Era drinks reel"><video muted loop playsinline preload="none" poster="images/fnb/era-drinks.jpg" data-src="video/fnb/era-drinks.mp4"></video></button>
+                <button type="button" data-video="video/fnb/padaria-croissant.mp4" data-poster="images/fnb/padaria-croissant.jpg" aria-label="Padaria croissant reel"><video muted loop playsinline preload="none" poster="images/fnb/padaria-croissant.jpg" data-src="video/fnb/padaria-croissant.mp4"></video></button>
+              </div>
+              <a class="panel__more" href="#fnb" data-i18n="svc.more5">See all reels →</a>
               <p class="panel__word" aria-hidden="true" data-i18n="svc5.w">SHOOT</p>
             </div>
           </article>
           <article class="panel">
             <button class="panel__head" type="button" aria-expanded="false">
-              <span class="panel__num">00-6</span>
+              <span class="panel__num">00-5</span>
               <span class="panel__short" data-i18n="svc6.s">PR</span>
             </button>
             <div class="panel__body">
-              <span class="panel__num panel__num--big">00-6</span>
+              <span class="panel__num panel__num--big">00-5</span>
               <h3 data-i18n="svc6.t">Public Relations</h3>
               <p data-i18n="svc6.d">We support your brand by connecting you with public figures and celebrities.</p>
               <p class="panel__word" aria-hidden="true" data-i18n="svc6.w">PR</p>
@@ -221,11 +235,11 @@
           </article>
           <article class="panel">
             <button class="panel__head" type="button" aria-expanded="false">
-              <span class="panel__num">00-7</span>
+              <span class="panel__num">00-6</span>
               <span class="panel__short" data-i18n="svc7.s">Giveaways</span>
             </button>
             <div class="panel__body">
-              <span class="panel__num panel__num--big">00-7</span>
+              <span class="panel__num panel__num--big">00-6</span>
               <h3 data-i18n="svc7.t">Giveaways</h3>
               <p data-i18n="svc7.d">Promotional items for your brand, competitively priced and of the highest quality.</p>
               <p class="panel__word" aria-hidden="true" data-i18n="svc7.w">GIFTS</p>
@@ -233,11 +247,11 @@
           </article>
           <article class="panel">
             <button class="panel__head" type="button" aria-expanded="false">
-              <span class="panel__num">00-8</span>
+              <span class="panel__num">00-7</span>
               <span class="panel__short" data-i18n="svc8.s">Media Buying</span>
             </button>
             <div class="panel__body">
-              <span class="panel__num panel__num--big">00-8</span>
+              <span class="panel__num panel__num--big">00-7</span>
               <h3 data-i18n="svc8.t">Media Buying</h3>
               <p data-i18n="svc8.d">Expert media planning that stretches every pound of your ad budget, across Meta, TikTok and Google, to reach the right audience.</p>
               <p class="panel__word" aria-hidden="true" data-i18n="svc8.w">ADS</p>
@@ -505,12 +519,13 @@
               <label for="f-service" data-i18n="f.service">Service needed *</label>
               <select id="f-service" name="service" required>
                 <option value="" data-i18n="f.choose">Choose one</option>
-                <option value="Shopify store" data-i18n="svc1.t">Shopify Store Design &amp; Development</option>
-                <option value="Social media" data-i18n="svc2.t">Social Media Management &amp; Feed Design</option>
-                <option value="Content & AI video" data-i18n="svc3.t">Content Creation &amp; AI Video</option>
-                <option value="Brand strategy" data-i18n="svc4.t">Brand Strategy &amp; Identity</option>
-                <option value="Paid ads" data-i18n="svc5.t">Paid Ads (Meta / TikTok / Google)</option>
-                <option value="SEO" data-i18n="svc6.t">SEO &amp; Store Optimization</option>
+                <option value="Brand design" data-i18n="svc1.t">Brand Design</option>
+                <option value="Social media" data-i18n="svc3.t">Social Media Marketing</option>
+                <option value="Website" data-i18n="svc4.t">Website Development</option>
+                <option value="Media production" data-i18n="svc5.t">Media Production</option>
+                <option value="Public relations" data-i18n="svc6.t">Public Relations</option>
+                <option value="Giveaways" data-i18n="svc7.t">Giveaways</option>
+                <option value="Media buying" data-i18n="svc8.t">Media Buying</option>
                 <option value="Not sure" data-i18n="f.notsure">Not sure yet</option>
               </select>
               <p class="field__error" aria-live="polite"></p>
@@ -570,10 +585,11 @@
         <div>
           <h3 data-i18n="footer.services">Services</h3>
           <ul>
-            <li data-i18n="svc1.s">Shopify</li>
-            <li data-i18n="svc2.s">Social</li>
-            <li data-i18n="svc3.s">Content &amp; AI</li>
-            <li data-i18n="svc5.s">Ads</li>
+            <li data-i18n="svc1.s">Brand</li>
+            <li data-i18n="svc3.s">Social</li>
+            <li data-i18n="svc4.s">Website</li>
+            <li data-i18n="svc5.s">Production</li>
+            <li data-i18n="svc8.s">Media Buying</li>
           </ul>
         </div>
         <div>

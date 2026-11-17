@@ -273,7 +273,7 @@ const FNB = [
   { id: 'padaria-sandwich', client: 'Padaria', title: { en: 'Croissant sandwich', ar: 'ساندوتش كرواسون' } },
   { id: 'padaria-eclair', client: 'Padaria', title: { en: 'Éclair & ice cream', ar: 'إكلير وآيس كريم' } },
   { id: 'padaria-salad', client: 'Padaria', title: { en: 'Salad bar', ar: 'السلطات' } },
-  { id: 'padaria-donut', client: 'Padaria', title: { en: 'Meet the bakers', ar: 'تعرّف على الخبازين' } },
+  { id: 'padaria-tarts', client: 'Padaria', title: { en: 'Tarts & almond cake', ar: 'تارت وكيكة اللوز' } },
   { id: 'padaria-cruffin', client: 'Padaria', title: { en: 'Cruffin', ar: 'كرافن' } },
   { id: 'padaria-pastry', client: 'Padaria', title: { en: 'Fresh pastry', ar: 'معجنات طازجة' } },
 ];
@@ -348,12 +348,12 @@ const CLIENTS = [
 const AR = {
   'a11y.skip': 'انتقل إلى المحتوى',
   'nav.work': 'أعمالنا', 'nav.social': 'السوشيال', 'nav.services': 'خدماتنا', 'nav.process': 'طريقتنا', 'nav.contact': 'تواصل',
-  'nav.talk': 'لنتحدث', 'nav.branding': 'الهوية', 'nav.about': 'من نحن', 'nav.results': 'النتائج',
+  'nav.talk': 'لنتحدث', 'nav.branding': 'الهوية', 'nav.about': 'من نحن', 'svc.more1': 'كل أعمال الهوية ←', 'svc.more3': 'الفيد وتصميمات البوستات ←', 'svc.more5': 'كل الريلز ←', 'nav.results': 'النتائج',
   'about.kicker': 'من نحن', 'about.title': 'نساعدك تدخل السوق بقوة.',
   'about.lead': 'فريق متمرّس بنى CTRL بعناية ليساعدك تدخل السوق بطريقة تربطك بجمهورك وتضع علامتك تحت الأضواء.',
   'about.p': 'نحب أن نساعدك تجد صوتك الإبداعي. نرشد عملاءنا وسط تحديات السوق الحديث ليكبروا في عالم يتغير بسرعة.',
   'about.founder': 'المؤسِّسة', 'about.role': 'المؤسِّسة ومديرة التسويق', 'about.quote': '«نركز على فهم احتياجاتك، بهدف واحد: زيادة مبيعاتك.»', 'about.cta': 'ابدأ',
-  'services.lead': 'ثماني خدمات، فريق واحد. اختر خدمة أو اترك لنا كل شيء.',
+  'services.lead': 'سبع خدمات، فريق واحد. اختر خدمة أو اترك لنا كل شيء.',
   'svc7.t': 'الهدايا الترويجية', 'svc7.d': 'منتجات ترويجية لعلامتك بأسعار منافسة وأعلى جودة.', 'svc7.s': 'هدايا', 'svc7.w': 'هدايا',
   'svc8.t': 'شراء الإعلانات', 'svc8.d': 'تخطيط إعلامي متخصص يستغل كل جنيه في ميزانيتك على ميتا وتيك توك وجوجل للوصول للجمهور الصحيح.', 'svc8.s': 'شراء الإعلانات', 'svc8.w': 'إعلانات',
   'results.kicker': 'شراء الإعلانات', 'results.title': 'ميزانية إعلانات تدخل، ومبيعات تخرج.',
@@ -420,6 +420,7 @@ const AR = {
 
 /* English strings used only by JS (not in the HTML) */
 const EN_EXTRA = {
+  'svc.more1': 'See all branding →', 'svc.more3': 'See feeds & post designs →', 'svc.more5': 'See all reels →',
   'brands.rebrand': 'Rebrand', 'brands.scratch': 'From scratch',
   'rb.before': 'Before', 'rb.after': 'After', 'rb.open': 'Brand book',
   'hero.title': 'Take CTRL of your brand.',
@@ -493,6 +494,14 @@ function devices(p) {
 const tagList = (tags) => `<ul class="tags">${tags.map((tag) => `<li>${esc(t(tag))}</li>`).join('')}</ul>`;
 const visitLink = (p) =>
   `<a class="key key--yellow" href="${esc(p.url)}" target="_blank" rel="noopener">${esc(t('card.visit'))} <span aria-hidden="true">↗</span></a>`;
+
+/* Two crossing straps between About and Services: the services on yellow, client names on black */
+function renderTapes() {
+  const svc = ['svc1', 'svc3', 'svc4', 'svc5', 'svc6', 'svc7', 'svc8'].map((k) => `<span class="tape__item">${esc(t(k + '.t'))}</span><span class="tape__star">✦</span>`).join('');
+  const names = websites().map((p) => `<span class="tape__item">${esc(p.name)}</span>${LOGO}`).join('');
+  $('#tape-a').innerHTML = `<div class="tape__group">${svc}</div><div class="tape__group">${svc}</div>`;
+  $('#tape-b').innerHTML = `<div class="tape__group">${names}</div><div class="tape__group">${names}</div>`;
+}
 
 function renderMarquee() {
   const names = websites().map((p) => `<span class="marquee__item">${esc(p.name)}</span>${LOGO}`).join('');
@@ -772,6 +781,22 @@ function renderRebrands() {
     if (row) openBook(row.dataset.brand);
   });
 })();
+
+/* --- Services: the example tiles open the brand book, post set or reel --- */
+$('#panels').addEventListener('click', (e) => {
+  const tile = e.target.closest('.panel__media [data-book], .panel__media [data-design], .panel__media [data-video]');
+  if (!tile) return;
+  e.stopPropagation();
+  if (tile.dataset.book) openBook(tile.dataset.book);
+  else if (tile.dataset.design) openBook(tile.dataset.design, DESIGNS, 'designs');
+  else playVideo(tile.dataset.video, tile.dataset.poster);
+});
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(([en]) => {
+    const open = $('#panels .panel.is-open');
+    if (en.isIntersecting && open) playPanelMedia(open); else playPanelMedia(null);
+  }, { threshold: 0.3 }).observe($('#panels'));
+}
 
 /* --- Food & Beverages: a sideways rail; reels on screen play muted, tap opens one with sound --- */
 const fnbRail = $('#fnb-rail');
@@ -1170,6 +1195,7 @@ document.addEventListener('click', (e) => {
 
 function renderAll() {
   renderMarquee();
+  renderTapes();
   renderCarousel();
   renderFeeds();
   renderReels();
@@ -1288,7 +1314,15 @@ function typeHeadline() {
 
 /* ---------- 9. Service panels, process wheel, AI word wheel ---------- */
 const panels = $$('.panel');
+function playPanelMedia(panel) {
+  panels.forEach((p) => $$('.panel__media video', p).forEach((v) => {
+    if (p === panel && !reduceMotion) { if (!v.getAttribute('src')) v.src = v.dataset.src; v.play().catch(() => {}); }
+    else v.pause();
+  }));
+}
+
 function openPanel(panel) {
+  playPanelMedia(panel);
   panels.forEach((p) => {
     const on = p === panel;
     p.classList.toggle('is-open', on);
