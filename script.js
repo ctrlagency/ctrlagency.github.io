@@ -19,9 +19,9 @@ const CONFIG = {
   // [REPLACE] Create a form at https://formspree.io and paste its endpoint here.
   // Until then the form validates and shows the success message without sending anything.
   formspree: 'https://formspree.io/f/YOUR_FORM_ID',
-  whatsapp: '201017453583',            // digits only, country code first (Egypt = 20)
-  phone: '01017453583',
-  email: 'Nabil.ctrlagency@gmail.com',
+  whatsapp: '201005060299',            // digits only, country code first (Egypt = 20)
+  phone: '01005060299',
+  email: 'ctrl.marketingagency1@gmail.com',
   instagram: 'https://www.instagram.com/ctrlmarketing.agency',
 };
 
@@ -341,6 +341,7 @@ const CLIENTS = [
   ['multi-craft', 'Multi Craft'], ['tolle', 'Tolle'], ['kuni', 'Kuni'], ['mj-designs', 'MJ Designs'],
   ['kyra', 'Kyra Naturals'], ['fashion-avenue', 'Fashion Avenue Cairo'], ['shopless', 'Shopless'],
   ['we-love-the-perfect', 'We Love The Perfect'], ['umodest', 'Umodest'], ['ettamen', 'Ettamen Clinic'],
+  ['coffee-bay', 'Coffee Bay'],
 ];
 
 /* ---------- 4. Arabic translations ----------
@@ -361,7 +362,7 @@ const AR = {
   'results.n1': 'المجال: أزياء نسائية', 'results.n2': 'المجال: أحذية نسائية', 'results.n3': 'المجال: ستريت وير',
   'results.spent': 'الإنفاق', 'results.sales': 'المبيعات',
   'results.note': 'شراء الإعلانات يحتاج خبرة وعلاقات. نضع لك الخطة المناسبة للنمو الذي تريده.',
-  'clients.kicker': 'عملاؤنا', 'clients.title': 'عملاؤنا', 'clients.lead': 'علامات في الأزياء والأكل والمنزل والتجميل والصحة والسياحة تثق بنا في نموها.',
+  'clients.more': 'والمزيد', 'clients.kicker': 'عملاؤنا', 'clients.title': 'عملاؤنا', 'clients.lead': 'علامات في الأزياء والأكل والمنزل والتجميل والصحة والسياحة تثق بنا في نموها.',
   'social.g3': 'تصميمات البوستات', 'social.g3d': 'بوستات حملات صممناها لعلامات أزياء وسياحة وصحة وتجميل وأكل. اضغط لترى المجموعة كاملة.',
   'cta.keys': 'لا تقلق، نحن نتحكم في مشاريعك. لا مجال للهروب من النجاح.', 'nav.fnb': 'أكل ومشروبات',
   'fnb.kicker': 'مذاق', 'fnb.title': 'أكل ومشروبات', 'fnb.lead': 'لقطات قريبة ووصفات ولقاءات في الشارع لكافيهات ومخابز ومطاعم. اضغط على أي ريل لتشاهده بالصوت.',
@@ -420,7 +421,7 @@ const AR = {
 
 /* English strings used only by JS (not in the HTML) */
 const EN_EXTRA = {
-  'svc.more1': 'See all branding →', 'svc.more3': 'See feeds & post designs →', 'svc.more5': 'See all reels →',
+  'clients.more': '& more', 'svc.more1': 'See all branding →', 'svc.more3': 'See feeds & post designs →', 'svc.more5': 'See all reels →',
   'brands.rebrand': 'Rebrand', 'brands.scratch': 'From scratch',
   'rb.before': 'Before', 'rb.after': 'After', 'rb.open': 'Brand book',
   'hero.title': 'Take CTRL of your brand.',
@@ -717,7 +718,8 @@ $('#designs-list').addEventListener('click', (e) => {
 
 function renderClients() {
   $('#clients-grid').innerHTML = CLIENTS.map(([id, name]) => `
-    <li class="client reveal"><img src="images/clients/${esc(id)}.webp" alt="${esc(name)}" loading="lazy" decoding="async"></li>`).join('');
+    <li class="client reveal"><img src="images/clients/${esc(id)}.webp" alt="${esc(name)}" loading="lazy" decoding="async"></li>`).join('')
+    + `<li class="client client--more reveal"><span>${esc(t('clients.more'))}</span></li>`;
 }
 
 /* --- Rebrands: drag the divider to compare the old logo with CTRL's new identity --- */

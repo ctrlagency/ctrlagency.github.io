@@ -811,3 +811,7 @@ html[lang="ar"] .tape__item { font-weight: 700; letter-spacing: 0; text-transfor
   .tape--yellow { transform: translateY(-50%) translateY(-14px) rotate(-6deg); }
   .tape--black { transform: translateY(-50%) translateY(14px) rotate(5deg); }
 }
+.client--more { display: grid; place-items: center; background: var(--ink); color: var(--yellow); }
+.client--more span { font: 900 clamp(1.3rem, 2.4vw, 2rem)/1 var(--f-head); font-stretch: 115%; letter-spacing: -0.03em; text-transform: uppercase; text-align: center; padding: 8px; }
+html[lang="ar"] .client--more span { text-transform: none; letter-spacing: 0; font-weight: 700; }
+@media (max-width: 760px) { .client--more { grid-column: 1 / -1; aspect-ratio: auto; height: 76px; } }
